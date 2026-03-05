@@ -29,3 +29,22 @@ class Connection {
 }
 
 $connection = Connection::singleton(); // This will create a singleton instance
+
+// My example of singleton pattern
+class a {
+    private static $ins = null;
+
+    private function __construct() {}
+
+    public static function sing() {
+        if(static:: $ins === null){
+            static::$ins = new static();
+        }
+
+        return static::$ins;
+    }
+}
+
+var_dump(
+    a::sing()
+);
